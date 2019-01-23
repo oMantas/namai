@@ -1,11 +1,10 @@
 <?php
-$my_money = 1000;
-$spent_per_month = 600;
-$earned_per_month = 800;
-$unknown_per_month = rand(1,200);
-$months = 24;
-$date = date('Y-m-d', strtotime('+2 year'));
-$I_will_have = $my_money + $months * ($earned_per_month - $spent_per_month - $unknown_per_month);
+date_default_timezone_get('Europe/Vilnius');
+$spalis = 31;
+$lapkritis = 30;
+$gruodis = 31;
+$date = date('d');
+$x = $spalis + $lapkritis + $gruodis + $date;
 
-print "<p>Po $months men. $date, tiketina turesiu $I_will_have pinigu.</p>"
+print "Nuo spalio pradzios iki siandien praejo $x dienu.";
 ?>
