@@ -1,10 +1,45 @@
 <?php
-date_default_timezone_get('Europe/Vilnius');
-$spalis = 31;
-$lapkritis = 30;
-$gruodis = 31;
-$date = date('d');
-$x = $spalis + $lapkritis + $gruodis + $date;
+$sun_or_rain = rand(0,1);
+$id = '';
+$text = '';
 
-print "Nuo spalio pradzios iki siandien praejo $x dienu.";
+if($sun_or_rain) {
+    $text = 'It\'s a sunny day.';
+    $id = 'sunny_pic'; 
+}else {
+    $text = 'It\'s a rainy day.';
+    $id = 'rain_pic';
+}
+
 ?>
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            p {
+                font-size: 30px;
+            }
+            div {
+                width: 350px;
+                height: 300px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            #sunny_pic {
+                background-image: url(../img/sunny.jpg);
+            }
+            #rain_pic {
+                background-image: url(../img/rain.jpg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <p><?php print "$text"; ?></p>
+        <div id='<?php print "$id"; ?>'></div>
+    </body>
+</html>
