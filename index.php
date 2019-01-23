@@ -1,21 +1,12 @@
 <?php
-$sunny = rand(0,1);
-$rain = rand(0,1);
+date_default_timezone_get('Europe/Vilnius');
+$time = date('s');
 $id = '';
-$text = '';
 
-if($sunny == 1 && $rain == 0) {
-    $text = 'It\'s a sunny day.';
-    $id = 'sunny_pic'; 
-}elseif($sunny == 1 && $rain == 1) {
-    $text = 'It\'s a sunny with rain.';
-    $id = 'sunny_rain';
-}elseif($rain == 1 && $sunny == 0) {
-    $text = 'It\'s a rainy day with clouds.';
-    $id = 'rainCloud';
-}else{
-    $text = 'It\'s a rainy day.';
-    $id = 'rain_pic';
+if($time % 2 == 0) {
+    $id = 'kvadratas';
+}else {
+    $id = 'apskritimas';
 }
 ?>
 <!DOCTYPE html>
@@ -27,31 +18,29 @@ if($sunny == 1 && $rain == 0) {
         <title>Document</title>
         <style>
             p {
-                font-size: 30px;
+                color: white;
+                font-family: fantasy;
+                font-size: 40px;
+                text-align: center;
+                padding-top: 165px;
             }
             div {
-                width: 350px;
-                height: 300px;
-                background-size: contain;
-                background-repeat: no-repeat;
+                width: 400px;
+                height: 400px;
+                margin: 150px auto;
             }
-            #sunny_pic {
-                background-image: url(../img/sunny.jpg);
+            #kvadratas {
+                background-color: black;
             }
-            #rain_pic {
-                background-image: url(../img/rain.jpg);
+            #apskritimas {
+                border-radius: 50%;
+                background-color: grey;
             }
-            #sunny_rain {
-                background-image: url(../img/rainySunshine.jpg);
-            }
-            #rainCloud {
-                background-image: url(../img/rainCloud.jpg);
-            }
-
         </style>
     </head>
     <body>
-        <p><?php print "$text"; ?></p>
-        <div id='<?php print "$id"; ?>'></div>
+        <div id='<?php print "$id"; ?>'>
+            <p><?php print date('H:i:s'); ?></p>
+        </div>
     </body>
 </html>
