@@ -1,22 +1,16 @@
 <?php
-$sunny = rand(0,1);
-$rain = rand(0,1);
+$sun_or_rain = rand(0,1);
 $id = '';
 $text = '';
 
-if($sunny == 1 && $rain == 0) {
+if($sun_or_rain) {
     $text = 'It\'s a sunny day.';
     $id = 'sunny_pic'; 
-}elseif($sunny == 1 && $rain == 1) {
-    $text = 'It\'s a sunny with rain.';
-    $id = 'sunny_rain';
-}elseif($rain == 1 && $sunny == 0) {
-    $text = 'It\'s a rainy day with clouds.';
-    $id = 'rainCloud';
-}else{
+}else {
     $text = 'It\'s a rainy day.';
     $id = 'rain_pic';
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +34,6 @@ if($sunny == 1 && $rain == 0) {
             }
             #rain_pic {
                 background-image: url(../img/rain.jpg);
-            }
-            #sunny_rain {
-                background-image: url(../img/rainySunshine.jpg);
-            }
-            #rainCloud {
-                background-image: url(../img/rainCloud.jpg);
             }
 
         </style>
