@@ -1,38 +1,11 @@
 <?php
-$link = 'https://www.w3schools.com/php/';
-$img = '../img/php.png';
+$my_money = 1000;
+$spent_per_month = 600;
+$earned_per_month = 800;
+$unknown_per_month = rand(1,200);
+$months = 24;
+$date = date('Y-m-d', strtotime('+2 year'));
+$I_will_have = $my_money + $months * ($earned_per_month - $spent_per_month - $unknown_per_month);
+
+print "<p>Po $months men. $date, tiketina turesiu $I_will_have pinigu.</p>"
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <style>
-            img {
-                width: 150px;
-                height: 100px;
-            }
-        </style>
-    </head>
-    <body>
-        <p>
-            <img src="<?php print $img; ?>">
-            <a href="<?php print $link; ?>">PHP lessons</a>
-        </p>
-        <p>
-            <img src="<?php print $img; ?>">
-            <a href="<?php print $link; ?>">PHP lessons</a>
-        </p>
-        <p>
-            <img src="<?php print $img; ?>">
-            <a href="<?php print $link; ?>">PHP lessons</a>
-        </p>
-        <p>
-            <img src="<?php print $img; ?>">
-            <a href="<?php print $link; ?>">PHP lessons</a>
-        </p>
-        
-    </body>
-</html>
